@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border1: #93b6d7;
+  --border2: #93d7b6;
+  --border3: #93b;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #16161d;
+  padding: 10vmin 5vmin;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+  user-select: none;
+}
+
+ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 10vmin;
+  position: relative;
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+}
+
+ul li {
+  width: 8vmin;
+  height: 8vmin;
+}
+
+ul li i {
+  opacity: 0;
+  position: absolute;
+  display: block;
+  top: -1vmin;
+  left: -1vmin;
+  width: 10vmin;
+  height: 10vmin;
+  border: 0.5vmin solid #93b6d7;
+  border-color: var(--border1);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+ul li i:nth-of-type(2) {
+  border-color: #93d7b6;
+  border-color: var(--border2);
+}
+
+ul li i:nth-of-type(3) {
+  border-color: #93b;
+  border-color: var(--border3);
+}
+
+ul:nth-of-type(odd) li:nth-of-type(even) {
+  align-self: flex-end;
+}
+
+ul:nth-of-type(even) li:nth-of-type(odd) {
+  align-self: flex-end;
+}
+
+button {
+  width: 8vmin;
+  height: 8vmin;
+  line-height: 6vmin;
+  font-size: 5vmin;
+  appearance: none;
+  background: transparent;
+  border: 0.5vmin solid currentColor;
+  border-radius: 50%;
+  vertical-align: middle;
+  padding: 0;
+  color: #FAFAFE;
+  touch-action: none;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 3px 3px #FAFAFE;
+}
+
+button:disabled {
+  opacity: 0.1;
+}
+
+#controls li {
+  width: 50vmin;
+}
+
+#space {
+  width: 50vmin;
+  border-radius: 4vmin;
+}
+
+.muted ul:not(#controls) {
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  opacity: 0.6;
+}
+
+.muted.more-animations ul:not(#controls) {
+  transform: scale(0.75);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.radios {
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  width: 14rem;
+  margin: 0 auto;
+  border: 0.5vmin solid #FAFAFE;
+  border-radius: 2rem;
+  padding: 0.2rem;
+  font-size: 0.875rem;
+}
+
+.radios p {
+  flex: 1;
+  color: #FAFAFE;
+  padding-left: 0.5rem;
+}
+
+.radios div {
+  flex: 1;
+}
+
+.radios div input {
+  position: absolute;
+  opacity: 0;
+}
+
+.radios div label {
+  vertical-align: middle;
+  display: flex;
+  text-align: center;
+}
+
+.radios div label span {
+  flex: 1;
+  text-align: center;
+  border: 1px solid #16161d;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  background: #FAFAFE;
+  color: #16161d;
+}
+
+.radios div label span:first-of-type {
+  background: #16161d;
+  color: #FAFAFE;
+}
+
+.radios div input:checked+label span {
+  background: #16161d;
+  color: #FAFAFE;
+}
+
+.radios div input:checked+label span:first-of-type {
+  background: #FAFAFE;
+  color: #16161d;
+}
+
+.radios div input:focus+label {
+  border: 1px solid #444;
+}
+
+button:disabled {
+  opacity: 0.1;
+}
